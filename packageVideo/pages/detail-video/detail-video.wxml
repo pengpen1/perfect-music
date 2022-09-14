@@ -1,0 +1,28 @@
+<!--pages/detail-video/detail-video.wxml-->
+
+<video src="{{videoUrl}}" autoplay class="video" danmu-list="{{danmuList}}" referrer-policy="origin">
+</video>
+
+<scroll-view class="scrollContentWrap" scroll-y style="height: {{scrollHeight}};">
+  <!-- mv信息 -->
+  <view class="info">
+    <view class="title">{{mvInfo.name}}</view>
+    <view class="dec">{{mvInfo.artistName}}</view>
+    <view class="other">
+      <text class="play-count">{{format.formatCount(mvInfo.playCount)}}次播放 - </text>
+      <text class="publish-time">{{mvInfo.publishTime}}</text>
+    </view>
+  </view>
+
+  <!-- 关联视频 -->
+  <view class="recommend">
+    <view class="title">推荐视频</view>
+    <view class="video-list">
+      <block wx:for="{{mvRelated}}" wx:key="vid">
+        <video-detail-list itemInfo="{{item}}"></video-detail-list>
+      </block>
+    </view>
+  </view>
+</scroll-view>
+
+<wxs src="/utils/format.wxs" module="format"></wxs>

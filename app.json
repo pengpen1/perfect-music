@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/main-music/main-music",
+    "pages/main-video/main-video",
+    "pages/detail-search/detail-search",
+    "pages/detail-menu/detail-menu",
+    "pages/detail-song/detail-song",
+    "pages/music-player/music-player"
+  ],
+  "subPackages": [
+    {
+      "root": "packageVideo",
+      "name": "video",
+      "pages": ["pages/detail-video/detail-video"]
+    }
+  ],
+  "preloadRule": {
+    "pages/main-video/main-video": {
+      "network": "all",
+      "packages": ["video"]
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "perfect-music",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#ff8189",
+    "list": [
+      {
+        "text": "音乐",
+        "pagePath": "pages/main-music/main-music",
+        "iconPath": "assets/images/tabbar/music_normal.png",
+        "selectedIconPath": "assets/images/tabbar/music_active.png"
+      },
+      {
+        "text": "视频",
+        "pagePath": "pages/main-video/main-video",
+        "iconPath": "assets/images/tabbar/video_normal.png",
+        "selectedIconPath": "assets/images/tabbar/video_active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "tab-bar": "/components/tabControl/tabControl"
+  }
+}

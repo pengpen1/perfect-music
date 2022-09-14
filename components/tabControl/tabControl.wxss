@@ -1,0 +1,19 @@
+/* components/tabControl/tabControl.wxss */
+.tab-control{
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.listItem{
+    flex: 1;
+    box-sizing: border-box;
+}
+.listItem.active{
+    color: #ff8189;
+}
+
+.listItem.active .title{
+   padding: 5px;
+    border-bottom: 3px #ff8189 solid;
+} 

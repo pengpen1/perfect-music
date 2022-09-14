@@ -1,0 +1,13 @@
+<!--pages/detail-menu/detail-menu.wxml-->
+<view class="menu">
+  <block wx:for="{{allMenuList}}" wx:key="name">
+    <view class="title">{{item.cat}}</view>
+    <view class="menu-list">
+      <block wx:for="{{item.playlists ? item.playlists: item.list}}" wx:for-item="menuItem" wx:key="id">
+        <view class="menu-list-item">
+          <song-list-item itemInfo="{{menuItem}}"></song-list-item>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>
